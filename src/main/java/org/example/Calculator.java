@@ -1,7 +1,6 @@
 package org.example;
 import java.util.*;
 import java.util.logging.*;
-import java.lang.*;
 abstract class CalculatorOperation{
     protected double result;
     protected double num1;
@@ -59,6 +58,7 @@ public class Calculator {
         double res = s.nextDouble();
         int ch = 0;
         String msg="Enter the number2:";
+        String msg1="Result";
                 l.info("1.Addition \n 2.Subtraction \n 3.Multiplication \n 4.Division");
         do {
             l.info("Enter your choice:");
@@ -70,7 +70,7 @@ public class Calculator {
                     Addition add = new Addition(res,num);
                     res = add.calculate();
                     double addresult=res;
-                    l.log(Level.INFO, () -> "Result:" +addresult);
+                    l.log(Level.INFO, () -> msg1 +addresult);
                 }
                 case 2 -> {
                     l.info(msg);
@@ -78,7 +78,7 @@ public class Calculator {
                     Subtraction sub = new Subtraction(res,num);
                     res = sub.calculate();
                     double subresult=res;
-                    l.log(Level.INFO, () -> "Result:" +subresult);
+                    l.log(Level.INFO, () -> msg1 +subresult);
                 }
                 case 3 -> {
                     l.info(msg);
@@ -86,7 +86,7 @@ public class Calculator {
                     Multiplication mul = new Multiplication(res,num);
                     res = mul.calculate();
                     double mulresult=res;
-                    l.log(Level.INFO, () -> "Result:" + mulresult);
+                    l.log(Level.INFO, () -> msg1 + mulresult);
                 }
                 case 4 -> {
                     l.info(msg);
@@ -94,7 +94,7 @@ public class Calculator {
                     Division div = new Division(res,num);
                     res = div.calculate();
                     double divresult=res;
-                    l.log(Level.INFO, () -> "Result:" +divresult);
+                    l.log(Level.INFO, () -> msg1 +divresult);
                 }
                 case 5 -> System.exit(0);
                 default -> l.info("Invalid choice!");
